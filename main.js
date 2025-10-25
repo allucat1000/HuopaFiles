@@ -290,6 +290,78 @@ async function main() {
                     vid.controls = true;
                     vid.classList.add("videoFileEl");
                     fileDiv.append(vid);
+                } else if (ct.includes("audio/")) {
+                    const au = document.createElement("audio");
+                    au.src = `data:${ct};base64,${file.content}`;
+                    au.classList.add("rawAudioEl");
+
+                    const bg = document.createElement("div");
+                    bg.classList.add("audioFileEl");
+
+                    const fileName = document.createElement("p");
+                    fileName.classList.add("audioFileName");
+                    fileName.textContent = file.filename.split("/").pop();
+
+                    const controlDiv = document.createElement("div");
+                    controlDiv.classList.add("audioFileControls");
+
+                    const playButton = document.createElement("button");
+                    playButton.textContent = "▶";
+                    playButton.classList.add("audioPlayButton");
+
+                    const timeInput = document.createElement("input");
+                    timeInput.type = "range";
+                    timeInput.classList.add("audioTimeInput");
+                    timeInput.min = 0;
+                    timeInput.value = 0;
+                    timeInput.step = 0.1;
+
+                    fileDiv.append(bg);
+                    bg.append(fileName);
+                    bg.append(controlDiv);
+                    controlDiv.append(playButton);
+                    controlDiv.append(timeInput);
+                    fileDiv.append(au);
+
+                    let isPlaying = false;
+
+                    playButton.onclick = () => {
+                    if (isPlaying) {
+                        au.pause();
+                    } else {
+                        au.play();
+                    }
+                    };
+
+                    au.addEventListener("play", () => {
+                        isPlaying = true;
+                        playButton.textContent = "⏸";
+                    });
+                    au.addEventListener("pause", () => {
+                        isPlaying = false;
+                        playButton.textContent = "▶";
+                    });
+
+                    au.addEventListener("loadedmetadata", () => {
+                    timeInput.max = au.duration;
+                    });
+
+                    au.addEventListener("timeupdate", () => {
+                    if (!timeInput.dragging) { 
+                        timeInput.value = au.currentTime;
+                    }
+                    });
+
+                    timeInput.addEventListener("input", () => {
+                    au.currentTime = timeInput.value;
+                    });
+
+                    timeInput.addEventListener("mousedown", () => (timeInput.dragging = true));
+                    timeInput.addEventListener("mouseup", () => {
+                    timeInput.dragging = false;
+                    au.currentTime = timeInput.value;
+                    });
+
                 }
             }
         }

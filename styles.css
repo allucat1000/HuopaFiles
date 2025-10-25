@@ -198,6 +198,70 @@ button:hover {
     object-fit: contain;
 }
 
+.audioFileEl {
+    margin: 0 auto;
+    width: 50%;
+    display: block;
+    padding: 0.1em 0.5em;
+    background-color: rgb(35, 35, 35);
+    border-style: solid;
+    border-width: thin;
+    border-color: rgb(70, 70, 70);
+    border-radius: 2em;
+    min-width: 250px;
+}
+
+.audioFileControls {
+    display: flex;
+    align-items: center;
+    width: calc(100% + 1.5em);
+}
+
+.audioPlayButton {
+    margin: 0.25em;
+    width: auto;
+    border-color: transparent;
+    background-color: transparent;
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    font-size: x-small;
+}
+
+.audioFileName {
+    font-size: small;
+    color: white;
+    margin: 1em 1em;
+    margin-bottom: 0;
+}
+
+.audioTimeInput {
+    width: calc(100% - 6em);
+    margin: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    background: rgb(40, 40, 40);
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.audioTimeInput::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.rawAudioEl {
+    display: none;
+}
+
 #topbar {
     display: flex;
     flex-direction: row;
