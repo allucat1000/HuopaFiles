@@ -1,0 +1,221 @@
+body {
+    background-color: rgb(25, 25, 25);
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif
+}
+
+#login {
+    width: 50%;
+    margin: auto;
+    display: block;
+}
+
+input {
+    margin: 1em auto;
+    padding: 1em;
+    border-radius: 0.5em;
+    border-style: solid;
+    width: 100%;
+    display: block;
+    background-color: rgb(35, 35, 35);
+    border-color: rgb(65, 65, 65);
+    border-width: thin;
+    color: white;
+    outline: none;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 400;
+    color: white;
+    margin: 0.75em;
+}
+
+h3 {
+    text-align: left;
+    font-weight: 200;
+    color: white;
+    margin: 0.25em;
+}
+
+button {
+    margin: 2em auto;
+    padding: 1em;
+    border-radius: 0.5em;
+    border-style: solid;
+    width: 50%;
+    display: block;
+    background-color: rgb(35, 35, 35);
+    border-color: rgb(65, 65, 65);
+    border-width: thin;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+}
+
+button:hover {
+    background-color: rgb(40, 40, 40);
+}
+
+.hidden {
+    display: none !important;
+}
+
+#error {
+    color: rgb(180, 30, 30);
+    text-align: center;
+}
+
+.dirError {
+    margin-top: 5em;
+    color: white !important;
+}
+
+#path {
+    text-align: left;
+    margin: 0.25em 1em;
+}
+
+#files {
+    padding: 1em;
+    width: calc(100% - 2em);
+    margin: auto;
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.file {
+    background-color: rgb(40, 40, 40);
+    border-radius: 0.5em;
+    width: calc(50% - 2.125em);
+    padding: 0.75em;
+    border-style: solid;
+    border-color: rgb(65, 65, 65);
+    border-width: thin;
+    position: relative;
+    transition: 0.1s ease-in-out;
+    cursor: pointer;
+    min-width: 20em;
+}
+
+.filename {
+    font-weight: 200;
+    margin: 0;
+    margin-bottom: 0.5em;
+    color: white;
+    user-select: none;
+}
+
+.fileinfo {
+    font-family: 150;
+    margin: 0;
+    color: rgb(200, 200, 200);
+    user-select: none;
+}
+
+.fileicon {
+    position: absolute;
+    right: 0.75em;
+    top: 0.75em;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.filehovered {
+    background-color: rgb(45, 45, 45);
+}
+
+#loadingSpinner {
+    width: 64px;
+    margin: 1em auto;
+}
+
+.textFileInput {
+    width: 100%;
+    background-color: rgb(35, 35, 35);
+    padding: 1em;
+    color: white;
+    height: calc(100vh - 11em);
+    border-radius: 1em;
+    border-color: rgb(60, 60, 60);
+    outline: none;
+}
+
+#upload {
+    display: none;
+}
+
+#uploadButton {
+    width: 6.5em;
+    padding: 1em;
+    color: white;
+    background-color: rgb(35, 35, 35);
+    border-color: rgb(65, 65, 65);
+    border-width: thin;
+    outline: none;
+    border-radius: 0.5em;
+    border-style: solid;
+    cursor: pointer;
+    text-align: center;
+    height: 1.5em;
+    margin-right: 1em;
+    padding-bottom: 0.75em;
+    position: absolute;
+    right: 0;
+    transition: 0.1s ease-in-out;
+}
+
+#uploadButton:hover {
+    background-color: rgb(40, 40, 40);
+}
+
+.imageFileEl {
+    margin: 0 auto;
+    display: block;
+    width: calc(100% - 1em);
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0.5em;
+    max-height: 88vh;
+    height: auto;
+    object-fit: contain;
+}
+
+.videoFileEl {
+    margin: 0 auto;
+    display: block;
+    width: calc(100% - 1em);
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.2);
+    border-radius: 0.5em;
+    max-height: 88vh;
+    height: auto;
+    object-fit: contain;
+}
+
+#topbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(30, 30, 30);
+    padding: 0.5em 0;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    top: 0;
+}
+
+#margin {
+    margin-bottom: 4.5em;
+}
+
+#deleteButton {
+    width: 10em;
+    margin: 0;
+}

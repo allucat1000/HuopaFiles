@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huopa Files</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hidden" id="login">
+        <h1>Huopa FileServer</h1>
+        <h3>Server URL</h3>
+        <input id="serverURL">
+        <h3>Auth key</h3>
+        <input type="password" id="authKey">
+        <button id="linkAccount">Link to server</button>
+        <p id="error" class="hidden"></p>
+    </div>
+    <div id="mainUI" class="hidden">
+        <div id="topbar">
+            <h1 id="path">/</h1>
+            <button id="deleteButton">Delete</button>
+            <input id="upload" type="file">
+            <label id="uploadButton" for="upload">Upload</label>
+        </div>
+        <div id="margin"></div>
+        <div id="files">
+            <img id="loadingSpinner" src="spinner.svg">
+        </div>
+    </div>
+    <script src="main.js" defer></script>
+</body>
+</html>
